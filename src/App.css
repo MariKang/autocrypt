@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+body{
+  font-family: roboto-bold;
+}
+
+@font-face {
+  font-family: "roboto-bold";         
+  src: url("./font/Roboto-Bold.ttf"); 
+}
+
+@font-face {
+  font-family: "roboto-medium";         
+  src: url("./font/Roboto-Medium.ttf"); 
+}
