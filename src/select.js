@@ -1,7 +1,6 @@
 import React from 'react';
 import "./select.css";
 import Type from "./components/type"
-import ButtonB from "./components/buttonb"
 
 
 
@@ -17,7 +16,6 @@ const Select = () => {
         }
     </div>
     <Type></Type>
-    <ButtonB/>
     </>
     )
 }

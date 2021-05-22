@@ -2,92 +2,53 @@ import React, {useState} from 'react';
 import "./type.css";
 import { IoIosArrowForward } from 'react-icons/io';
 import ButtonB from "./buttonb"
-
-{/*class Type extends React.Component {
-
-    constructor(){
-        super();
-
-        this.state = {
-             ped_clicked: false,
-             drive_clicked: false,
-             chosen: false
-        }
-    }
-
-   changePedColor(){
-        this.setState({ped_clicked: !this.state.ped_clicked})
-        this.setState({chosen: !this.state.chosen})
-        this.setState({drive_clicked: false})
-        console.log(1)
-    }
-
-    render(){
-        let btn_class = this.state.clicked ? "box" : "box-clicked";
-        return <div className="type">
-            <button className="pedestrian-box box" onClick={this.changeColor.bind(this)}>
-                Pedestrian
-            </button>
-
-            <div className="arrow-1">
-                <IoIosArrowForward size="24px"/>
-            </div>
-
-            <button className="driver-box box">
-                Driver
-
-            </button>
-            <div className="arrow-2">
-                <IoIosArrowForward size="24px"/>
-            </div>
-        </div>
-
-    }
-    
-}*/}
+import ButtonActivated from "./buttonactivated"
 
 
 const Type = () => { 
 
-    let [pedClicked, setPedClicked] = useState(false);
-    let [driveClicked, changeDriveClick] = useState('box');
-    let [activated, changeActivated] = useState('ButtonB')
+    let [pedClicked, setPedClicked] = useState('box');
+    let [driveClicked, setDriveClicked] = useState('box');
+    let [activated, setActivated] = useState('ButtonB')
 
     function onChangePedClicked(){
-        setPedClicked(!pedClicked)
+        setPedClicked('box-clicked');
+        setDriveClicked('box');
+        setActivated('ButtonActivated');
+        
     }
+
+    function onChangeDriveClicked(){
+        setDriveClicked('box-clicked');
+        setPedClicked('box');
+        setActivated('ButtonActivated');
+    }
+
     return(
         <>
-    
         <div className="type">
-        {pedClicked? 
-       (<div>
-            <button className={`pedestrian-box ${pedClicked}`} onClick={onChangePedClicked}>
-                Pedestrian
-            </button>
+            <div>
+                <button className={`pedestrian-box ${pedClicked}`} onClick={onChangePedClicked}>
+                    Pedestrian
+                </button>
 
-            <div className="arrow-1">
-                <IoIosArrowForward size="24px"/>
+                <div className="arrow-1">
+                    <IoIosArrowForward size="24px"/>
+                </div>
             </div>
-        </div>):
-        (<div>
-            <button className="driver-box box" onClick={onChangePedClicked}>
-                Driver
-
-            </button>
-            <div className="arrow-2">
-                <IoIosArrowForward size="24px"/>
+            <div>
+                <button className={`driver-box ${driveClicked}`} onClick={onChangeDriveClicked}>
+                    Driver
+                </button>
+                <div className="arrow-2">
+                    <IoIosArrowForward size="24px"/>
+                </div>
             </div>
-        </div>)
-        }
-        
         </div>
 
-    
+        <div>{activated === 'ButtonB' ? <ButtonB/> : <ButtonActivated status='Next'/>}</div>
         </>
     )
-
-    
     
 }
 
