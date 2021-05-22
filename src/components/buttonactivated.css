@@ -1,0 +1,16 @@
+.button-activated{
+    background:#387DE0;
+
+}
+
+.button-text{
+    position: absolute;
+    font-family:"roboto-medium";
+    font-size: 20px;
+    text-align:center;
+    width:414px;
+    height:94px;
+    top:802px;
+    color: #FFFFFF;
+    border: none;
+}

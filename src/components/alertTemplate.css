@@ -1,0 +1,29 @@
+.alertbox{
+    background:#FFFFFF;
+    width: 362px;
+    height: 350px;
+
+    position: absolute;
+    top: 295px;
+    border-radius: 24px;
+}
+
+.alerttitle{
+    position: relative;
+    top: 72px;
+    left: 26px;
+    color: #FB4C2C;
+    font-family: "roboto-bold";
+    font-size: 48px;
+    text-align: center;
+}
+
+.alertbody{
+    position: relative;
+    top: 140px;
+    left: 26px;
+    color: #232323;
+    font-family: "roboto-medium";
+    font-size: 22px;
+    text-align: center;
+}
